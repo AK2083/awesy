@@ -27,7 +27,12 @@ jobs:
   
         - name: Install dependencies
           run: npm ci
-  
+
+        - name: Git Konfiguration
+          run: |
+            git config --global user.email "action@github.com"
+            git config --global user.name "GitHub Action"
+          
         - name: Release
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
