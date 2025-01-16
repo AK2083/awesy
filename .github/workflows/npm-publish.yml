@@ -20,6 +20,7 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
           with:
+            ref: ${{ github.event.pull_request.head.ref }}
             fetch-depth: 0 # Notwendig für release-it, um alle Commits zu sehen
   
         - name: Setup Node.js
